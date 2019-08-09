@@ -1,6 +1,6 @@
 namespace ShapeWorld.Domain.Models
 {
-  class Triangle : Shape
+  public class Triangle : Shape
   {
     public virtual double Base {get; set;}
     public virtual double Height {get ; set;}
@@ -11,7 +11,7 @@ namespace ShapeWorld.Domain.Models
     }
     public override double Area()
     {
-      return (Base * Height)/2;
+      return .5 * (Base * Height);
     }
 
     public Triangle () : base (3)

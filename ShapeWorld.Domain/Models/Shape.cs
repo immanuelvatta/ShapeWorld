@@ -50,5 +50,16 @@ namespace ShapeWorld.Domain.Models
       {
         NumberOfEdges = edges;
       }
+      public override string ToString()
+      {
+        //return $"{NumberOfEdges}";
+        //string interpolating
+        //when you put $ in front of "" it is going to be part 
+        //string and part of something that needs to be evaluated to be a string
+        
+        //this gives us the name and number of edges
+        //reflection allows us to get properties of a function during RUNTIME
+        return $"{this.GetType().Name} {NumberOfEdges} edges";
+      }
     }
 }

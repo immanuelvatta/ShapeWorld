@@ -1,4 +1,5 @@
 ﻿using System;
+using ShapeWorld.Domain.Collections;
 using ShapeWorld.Domain.Models;
 
 namespace ShapeWorld.Client
@@ -9,6 +10,7 @@ namespace ShapeWorld.Client
         private static void Main(string[] args)
         {
           PlayWithShape();
+          PlayWithCollection();
         }
 
         private static void PlayWithShape ()
@@ -18,13 +20,14 @@ namespace ShapeWorld.Client
           Square someSquare = new Square();
           Rectangle someRectangle = new Rectangle();
           Shape someShape = new Rectangle();
+          Shape someCube = new Cube();
 
           //casting ex 1 
           Rectangle someRectangle2 = new Rectangle() as Square;
           //cannot do this becase shape is abstract
           // ** Rectangle someRectangle = (Shape) new Rectangle(); **
           // casting  ex 2
-          Rectangle someRectangle3 = (Square) new Rectangle ();
+         // Rectangle someRectangle3 = (Square) new Rectangle ();
 
           //Rectangle someSquare = new Square ();
           //someShape.NumberOfEdges = 10;
@@ -36,7 +39,15 @@ namespace ShapeWorld.Client
           Console.WriteLine(someShape.Volume());//rectangle volume
           Console.WriteLine(someSquare.Volume());
 
-          
+        }
+
+        private static void PlayWithCollection()
+        {
+          ShapeArray sa = new ShapeArray();
+
+          sa.DimensionalArray();
+          sa.MyList();
+          sa.MyDictionary();
         }
     }
 }
